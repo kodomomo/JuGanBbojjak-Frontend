@@ -2201,6 +2201,7 @@ __metadata:
     react-dom: "npm:^18.2.0"
     react-query: "npm:^3.39.3"
     react-router: "npm:^6.20.1"
+    react-router-dom: "npm:^6.20.1"
     styled-components: "npm:^6.1.1"
     typescript: "npm:^4.4.3"
     vite: "npm:^5.0.0"
@@ -2753,7 +2754,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-router@npm:^6.20.1":
+"react-router-dom@npm:^6.20.1":
+  version: 6.20.1
+  resolution: "react-router-dom@npm:6.20.1"
+  dependencies:
+    "@remix-run/router": "npm:1.13.1"
+    react-router: "npm:6.20.1"
+  peerDependencies:
+    react: ">=16.8"
+    react-dom: ">=16.8"
+  checksum: 85d94fe4d21120c8782030cb94546a2a59cf057583dceb8e9a7f804655680af9488f4438533e0e5a128412e5c2dcac8c17b934907a7669085fdca19ec6bd5123
+  languageName: node
+  linkType: hard
+
+"react-router@npm:6.20.1, react-router@npm:^6.20.1":
   version: 6.20.1
   resolution: "react-router@npm:6.20.1"
   dependencies:

@@ -2,7 +2,6 @@ import { QueryClientProvider, QueryClient } from "react-query";
 import GlobalStyle from "./style/GloblaStyle";
 import { ThemeProvider } from "styled-components";
 import theme from "./utils/theme/theme";
-import "react-toastify/dist/ReactToastify.css";
 
 const queryClient = new QueryClient();
 

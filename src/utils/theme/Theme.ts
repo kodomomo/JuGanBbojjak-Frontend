@@ -2,6 +2,7 @@ import { DefaultTheme } from "styled-components";
 
 const colors = {
   Main: "#48CAF3",
+  Black700: "#4B4A4A",
 };
 
 const fonts = {
