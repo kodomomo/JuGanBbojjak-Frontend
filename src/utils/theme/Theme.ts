@@ -1,8 +1,11 @@
 import { DefaultTheme } from "styled-components";
 
 const colors = {
-  Main: "#48CAF3",
+  Main: "#1A9FFF",
+  Main800: "#016DD1",
+  Menubar: "#E4E4E4",
   Black700: "#4B4A4A",
+  White: "#FFFFFF",
 };
 
 const fonts = {
