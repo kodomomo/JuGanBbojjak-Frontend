@@ -1,7 +1,7 @@
-import Login from "../component/login";
+import Login from "../components/login";
 
 const LoginPage = () => {
-  return(
+  return (
     <>
       <Login />
     </>
