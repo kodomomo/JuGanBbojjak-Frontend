@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Header from "../header";
-import DefaultInput from "../../common/input";
+import WritingComponent from "./WritingComponent";
 
 const WritingEventSchedule = () => {
   return (
@@ -8,9 +8,12 @@ const WritingEventSchedule = () => {
       <Header />
       <Container>
         <MainText>주간 행사 일정 작성</MainText>
-        <Wrapper>
-          <DefaultInput width={1228} placeholder="행사명을 입력해주세요" text="행사"/>
-        </Wrapper>
+        <WritingComponent />
+        <Button type="button">+</Button>
+        <ButtonWrapper>
+          <Cancelbutton>취소</Cancelbutton>
+          <Savebutton>저장</Savebutton>
+        </ButtonWrapper>
       </Container>
     </>
   );
@@ -29,15 +32,67 @@ const MainText = styled.div`
   margin-bottom: 50px;
 `;
 
-const Wrapper = styled.div`
-  border-radius: 20px;
-  border: 1px solid var(--Main, #1a9fff);
-  background: #fff;
-  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
-  height: 510px;
+const Button = styled.button`
+  border-radius: 8px;
+  background-color: #1a9fff;
+  display: flex;
+  height: 60px;
+  padding: 10px 0px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: #ffff;
+  font-size: 45px;
+  border: none;
+  &:hover {
+    filter: brightness(1.25);
+    transition: all 0.3s;
+  }
+  margin-top: 50px;
+`;
+
+const Cancelbutton = styled.button`
+  border-radius: 8px;
+  background: var(--Gray-300, #d2d2d2);
+  display: flex;
+  width: 80px;
+  height: 40px;
+  padding: 15px 0px 16px 0px;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  &:hover {
+    background: #1a9fff;
+  }
+  border: none;
+`;
+
+const Savebutton = styled.button`
+  border: none;
+  border-radius: 8px;
+  background: var(--Gray-300, #d2d2d2);
+  display: flex;
+  width: 80px;
+  height: 40px;
+  padding: 15px 0px 16px 0px;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  &:hover {
+    background: #1a9fff;
+  }
+`;
+
+const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
-  padding: 60px 0;
+  gap: 20px;
+  margin-top: 50px;
+  margin-bottom: 150px;
 `;
 
 export default WritingEventSchedule;
