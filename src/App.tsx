@@ -1,22 +1,19 @@
 import { QueryClientProvider, QueryClient } from "react-query";
 import { ThemeProvider } from "styled-components";
+import GlobalStyle from "./style/globalStyle";
 import theme from "./utils/theme/theme";
-import GlobalStyle from "./style/GlobalStyle"
-// import { BrowserRouter as Router } from "react-router-dom"; 
-// import WritingEventSchedulePage from "./pages/Pages/WritingEventSchedulePage";
-import WorkReportPage from "./pages/Pages/WorkReportPage";
+import Router from "./Router";
 
 const queryClient = new QueryClient();
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <ThemeProvider theme={theme}>
-{/* <WritingEventSchedulePage/> */}
-<WorkReportPage/>
+    <ThemeProvider theme={theme}>
+      <QueryClientProvider client={queryClient}>
+        <Router />
         <GlobalStyle />
-      </ThemeProvider>
-    </QueryClientProvider>
+      </QueryClientProvider>
+    </ThemeProvider>
   );
 }
 

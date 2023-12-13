@@ -17,7 +17,7 @@ const Container = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 10px 10%;
+  padding: 10px 7%;
   img {
     cursor: pointer;
   }
