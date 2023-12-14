@@ -1,6 +1,6 @@
 import { QueryClientProvider, QueryClient } from "react-query";
 import { ThemeProvider } from "styled-components";
-import GlobalStyle from "./style/globalStyle";
+import GlobalStyle from "./style/GloblaStyle";
 import theme from "./utils/theme/theme";
 import Router from "./Router";
 
