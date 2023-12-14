@@ -2,8 +2,15 @@ import { styled } from "styled-components";
 import { EventDetailList } from "../../contance";
 import Header from "../header";
 import EventScheduleList from "./eventScheduleList";
+import { useState } from "react";
 
 const EventScheduleDetail = () => {
+  const [isEditMode, setIsEditMode] = useState(false);
+
+  const handleModifyButtonClick = () => {
+    setIsEditMode(!isEditMode);
+  };
+
   return (
     <>
       <Header />
@@ -15,14 +22,16 @@ const EventScheduleDetail = () => {
           <p>2023.11.3 ~ 2023.11.10</p>
         </SemititleSection>
         <ButtonSection>
-          <ModifyButton>수정</ModifyButton>
+          <ModifyButton onClick={handleModifyButtonClick}>
+            {isEditMode ? "저장" : "수정"}
+          </ModifyButton>
         </ButtonSection>
         {EventDetailList.map((item) => (
           <EventScheduleList
             title={item.title}
             date={item.date}
             place={item.place}
-            personnel={item.persennel}
+            personnel={item.personnel}
           />
         ))}
       </Container>

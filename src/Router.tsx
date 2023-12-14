@@ -1,7 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { MainPage } from "./pages";
-import EventScheduleDetailPage from "./pages/eventScheduleDetailPage";
-import LoginPage from "./pages/LoginPage";
+import { MainPage, LoginPage, EventScheduleDetailPage } from "./pages";
 
 function Router() {
   return (

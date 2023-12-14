@@ -37,9 +37,6 @@ const EventListBox = styled.div`
   p {
     font: ${({ theme }) => theme.fonts.Regular20};
   }
-  &:hover {
-    border: 1px solid var(--Main, #1a9fff);
-  }
 `;
 
 const Content = styled.div`
