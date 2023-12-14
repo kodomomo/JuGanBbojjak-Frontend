@@ -14,7 +14,22 @@ const colors = {
   White: "#FFFFFF",
   Green: "#04DF00",
   Yellow: "#04C900",
-  Red: "#EB363B",
+  Black: "#000000",
+  Gray900: "#1A1A1A",
+  Gray800: "#333333",
+  Gray700: "#4D4D4D",
+  Gray600: "#666666",
+  Gray500: "#808080",
+  Gray400: "#999999",
+  Gray300: "#E8E8E8",
+  Gray200: "#F0F0F0",
+  Gray100: "#F7F7F7",
+  Gray50: "#FBFBFB",
+  White: "#FFFFFF",
+  Green: "#04DF00",
+  Green100: "#04C900",
+  Red: "#E84045",
+  Red100: "#D13A3E",
 };
 
 const fonts = {
