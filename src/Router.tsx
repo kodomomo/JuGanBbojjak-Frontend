@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { MainPage, LoginPage } from "./pages";
+import { MainPage, LoginPage, EventScheduleDetailPage } from "./pages";
 
 function Router() {
   return (
@@ -7,6 +7,7 @@ function Router() {
       <Routes>
         <Route path="/main" element={<MainPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/eventScheduleDetail" element={<EventScheduleDetailPage />} />
       </Routes>
     </BrowserRouter>
   );
