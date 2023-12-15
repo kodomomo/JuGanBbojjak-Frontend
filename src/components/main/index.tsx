@@ -6,6 +6,7 @@ import WeeklyEvent from "./weeklyEvent";
 import WeeklyWork from "./weeklyWork";
 import Write from "./write";
 
+
 const Main = () => {
   const [selectMenu, setSelectMenu] = useState("최근");
   return (
@@ -23,8 +24,7 @@ const Main = () => {
 
 const Container = styled.div`
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  padding: 0 7%;
 `;
 
 const Wrapper = styled.div``;

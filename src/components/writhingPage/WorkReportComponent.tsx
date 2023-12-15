@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import DefaultInput from "../../common/Input";
+import DefaultInput from "../../common/input";
 
 const WorkReportComponent = () => {
   return (
     <Wrapper>
-      <DefaultInput width={65} placeholder="제목을 입력해주세요" text="제목" />
+      <DefaultInput width={71.5} placeholder="제목을 입력해주세요" text="제목" />
       <Div>
         <ContentText>내용입력</ContentText>
         <AddTableButton>항목 추가</AddTableButton>
@@ -45,7 +45,7 @@ const DetailInput = styled.textarea`
   border: 1px solid #d2d2d2;
   background: #fff;
   margin-top: 15px;
-  color: #9d9d9d;
+  color: black;
   font-size: 20px;
   font-weight: 400;
   line-height: 30px;
@@ -68,7 +68,7 @@ const ContentInput = styled.input`
   width: 100%;
   height: 60px;
   margin-top: 25px;
-  color: #9d9d9d;
+  color: black;
   font-size: 20px;
   font-weight: 400;
   line-height: 30px;

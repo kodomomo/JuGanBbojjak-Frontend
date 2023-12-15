@@ -1,8 +1,12 @@
 import styled from "styled-components";
 import Header from "../header";
 import WritingComponent from "./WritingComponent";
+import { useNavigate } from "react-router";
 
 const WritingEventSchedule = () => {
+
+  const navigate=useNavigate();
+
   return (
     <>
       <Header />
@@ -11,7 +15,7 @@ const WritingEventSchedule = () => {
         <WritingComponent />
         <Button type="button">+</Button>
         <ButtonWrapper>
-          <Cancelbutton>취소</Cancelbutton>
+          <Cancelbutton onClick={()=>{navigate("/main")}} >취소</Cancelbutton>
           <Savebutton>저장</Savebutton>
         </ButtonWrapper>
       </Container>
@@ -21,7 +25,7 @@ const WritingEventSchedule = () => {
 
 const Container = styled.div`
   background: var(--White, #fff);
-  padding: 0 10%;
+  padding: 0 7%;
 `;
 
 const MainText = styled.div`

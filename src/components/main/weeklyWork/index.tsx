@@ -26,8 +26,8 @@ const WeeklyWork = () => {
 };
 
 const Container = styled.div`
-  width: 900px;
-  height: 505px;
+  width: 65vw;
+  height: 75vh;
   background-color: ${({ theme }) => theme.colors.White};
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
   border-radius: 0 10px 10px;

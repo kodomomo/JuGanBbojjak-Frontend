@@ -44,6 +44,7 @@ const Dropdown: React.FC<DropdownProps> = ({ options, width, onClick }) => {
 
 const DropContainer = styled.div<{ width: number }>`
   display: block;
+  color: black;
   input {
     text-align: left;
     padding-left: 14px;
@@ -59,6 +60,7 @@ const DropContainer = styled.div<{ width: number }>`
   }
   margin-right: 25px;
   margin-left: 30px;
+ 
 `;
 
 const OptionList = styled.ul<{ width: number; current: boolean }>`
@@ -76,27 +78,6 @@ const OptionList = styled.ul<{ width: number; current: boolean }>`
   padding: 13px 7px;
   z-index: 1;
   overflow-y: scroll;
-  ::-webkit-scrollbar {
-    display: ${(props) => (props.current ? "block" : "none")};
-    width: 8px;
-  }
-  ::-webkit-scrollbar-thumb {
-    background-color: #1a9fff;
-    border-radius: 8px;
-  }
-  ::-webkit-scrollbar-track {
-    background-color: #d2d2d2;
-    border-radius: 10px;
-    border-radius: 8px;
-    box-shadow: inset 0px 0px 5px white;
-  }
-  li {
-    width: 100%;
-    font-size: 20px;
-    :hover {
-      background-color: #d2d2d2;
-    }
-    cursor: pointer;
-  }
+  
 `;
 export default Dropdown;

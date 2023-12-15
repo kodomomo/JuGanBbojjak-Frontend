@@ -1,4 +1,4 @@
-import EventScheduleDetail from "../component/eventScheduleDetail";
+import EventScheduleDetail from "../components/eventScheduleDetail";
 
 const EventScheduleDetailPage = () => {
   return(

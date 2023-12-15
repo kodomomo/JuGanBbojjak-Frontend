@@ -53,9 +53,9 @@ const MenuBox = styled.div<{ click?: boolean }>`
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  color: ${({ theme, click }) => click && theme.colors.Main800};
-  background-color: ${({ theme }) => theme.colors.Menubar};
-  background-color: ${({ theme, click }) => click && theme.colors.White};
+  color: ${({ theme, click }) => click && theme.colors.White};
+  background-color: ${({ theme, click }) => click && theme.colors.Main};
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 2, 0.10);
 `;
 
 export default Menu;

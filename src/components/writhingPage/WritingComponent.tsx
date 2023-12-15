@@ -1,10 +1,11 @@
 import styled from "styled-components";
-import DefaultInput from "../../common/Input";
+import DefaultInput from "../../common/input";
 import { useState } from "react";
-import Dropdown from "../../common/Dropdown";
+import Dropdown from "../../common/dropDown";
 import {
   monthDropDownItem,
   dayDropDownItem,
+  timeDropDownItem
 } from "../../constants/DropdownList";
 
  const WritingComponent = () => {
@@ -40,6 +41,11 @@ import {
         />
         <Dropdown
           options={dayDropDownItem}
+          width={113}
+          onClick={handleDropdownOption}
+        />
+         <Dropdown
+          options={timeDropDownItem}
           width={113}
           onClick={handleDropdownOption}
         />

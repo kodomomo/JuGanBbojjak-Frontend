@@ -1,8 +1,12 @@
 import styled from "styled-components";
-import WorkReportComponent from "./WorkReportComponents";
-
+import WorkReportComponent from "./WorkReportComponent";
 import Header from "../header";
+import { useNavigate } from "react-router";
+
 const WorkReport = () => {
+
+  const navigate=useNavigate();
+
   return (
     <>
       <Header />
@@ -11,7 +15,7 @@ const WorkReport = () => {
         <WorkReportComponent/>
         <Button type="button">+</Button>
         <ButtonWrapper>
-          <Cancelbutton>취소</Cancelbutton>
+          <Cancelbutton onClick={()=>{navigate("/main")}} >취소</Cancelbutton>
           <Savebutton>저장</Savebutton>
         </ButtonWrapper>
       </Container>
@@ -21,7 +25,7 @@ const WorkReport = () => {
 
 const Container = styled.div`
   background: var(--White, #fff);
-  padding: 0 10%;
+  padding: 0 7%;
 `;
 const MainText = styled.div`
   font-size: 32px;

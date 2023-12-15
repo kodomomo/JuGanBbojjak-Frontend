@@ -1,10 +1,14 @@
 import styled from "styled-components";
 import { LogoImg } from "../../assets/logo";
+import { useNavigate } from "react-router";
 
 const Header = () => {
+
+  const navigate = useNavigate();
+
   return (
     <Container>
-      <img src={LogoImg} alt="logo" />
+      <img src={LogoImg} alt="logo"   onClick={()=>{navigate("/main")}} />
       <ClassName>운영지원과</ClassName>
     </Container>
   );

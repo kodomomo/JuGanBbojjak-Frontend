@@ -25,3 +25,8 @@ export const dayDropDownItem: dropdownType = {
   initialState: "일",
   option: ["1일", "2일", "3일", "4일", "5일"],
 };
+
+export const timeDropDownItem: dropdownType={
+  initialState: "시간",
+  option: ["1시", "2시", "3시", "4시", "5시", "6시", "7시"]
+}
