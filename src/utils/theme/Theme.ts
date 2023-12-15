@@ -30,6 +30,7 @@ const colors = {
   Green100: "#04C900",
   Red: "#E84045",
   Red100: "#D13A3E",
+  ThColor: "#B9B9B9",
 };
 
 const fonts = {

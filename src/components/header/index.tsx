@@ -21,7 +21,7 @@ const Container = styled.div`
   img {
     cursor: pointer;
   }
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 `;
 
 const ClassName = styled.div`
