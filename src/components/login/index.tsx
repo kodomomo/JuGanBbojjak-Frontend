@@ -77,7 +77,7 @@ const LoginBtn = styled.button`
   background-color: #d2d2d2;
   &:hover {
     background-color: ${({ theme }) => theme.colors.Main}};
-  }
+  
 `;
 
 export default Login;
