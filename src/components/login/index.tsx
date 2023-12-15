@@ -1,87 +1,83 @@
 import { styled } from "styled-components";
-import { LoginCloud, LoginImg } from "../../assets/logo";
+import { LoginImg } from "../../assets/logo";
+import { useNavigate } from "react-router";
 
 const Login = () => {
+
+  const navigate=useNavigate();
+
   return (
     <Container>
       <LoginForm>
-        <Content>
-          <Logo src={LoginImg} alt="" />
-          <InputSection>
-            <p>아이디</p>
-            <Input />
-            <p>비밀번호</p>
-            <Input type="password" />
-            <Button>로그인</Button>
-          </InputSection>
-        </Content>
-        <BackgroundImg src={LoginCloud} alt="" />
+        <Logo src={LoginImg} alt="" />
+        <InputWrapper>
+          <Text>아이디</Text>
+          <Input placeholder="아이디를 입력해주세요" />
+          <Text>비밀번호</Text>
+          <Input placeholder="비밀번호를 입력해주세요" />
+        </InputWrapper>
+        <LoginBtn >로그인</LoginBtn>
       </LoginForm>
     </Container>
   );
 };
 
+const InputWrapper = styled.div``;
+
+const Text = styled.div`
+  color: #000;
+  font-family: Pretendard;
+  font-size: 20px;
+  font-weight: 600;
+`;
 const Container = styled.div`
-  width: 100%;
-  height: 100%;
-  background: white;
   display: flex;
   justify-content: center;
-  padding: 93.5px 300px;
+  margin-top: 160px;
 `;
 
 const LoginForm = styled.div`
-  width: 100%;
-  display: flex;
+  justify-content: center;
+  width: 30%;
   height: 550px;
   background-color: ${({ theme }) => theme.colors.White};
   border-radius: 15px;
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
-`;
-
-const Content = styled.div`
-  padding: 100px 0 100px;
+  padding: 3% 5%;
 `;
 
 const Logo = styled.img`
-  padding: 0 192.5px;
-`;
-
-const InputSection = styled.div`
-  padding: 40px 160px 0;
-  p {
-    color: ${({ theme }) => theme.colors.Black700};
-    font: ${({ theme }) => theme.fonts.Semibold12};
-    margin-bottom: 5px;
-    margin-left: 3px;
-  }
+  width: 233px;
+  height: 77px;
+  justify-content: center;
+  margin-bottom: 50px;
 `;
 
 const Input = styled.input`
+  margin-top: 10px;
   width: 100%;
-  height: 40px;
+  height: 43px;
   outline: none;
   margin-bottom: 25px;
+ font-size: 18px;
   padding-left: 10px;
   border-radius: 8px;
   border: 1px solid var(--Gray-300, #d2d2d2);
   background: ${({ theme }) => theme.colors.White};
 `;
 
-const Button = styled.button`
+const LoginBtn = styled.button`
   width: 100%;
   height: 41px;
   border: none;
   border-radius: 8px;
   margin-top: 20px;
-  font: ${({ theme }) => theme.fonts.Semibold12};
+  font: ${({ theme }) => theme.fonts.Semibold20};
   color: ${({ theme }) => theme.colors.White};
-  background: ${({ theme }) => theme.colors.Main};
+  background-color: #d2d2d2;
   &:hover {
-    background-color: ${({ theme }) => theme.colors.Main800};
+    background-color: ${({ theme }) => theme.colors.Main}};
   }
 `;
-
-const BackgroundImg = styled.img``;
 
 export default Login;
