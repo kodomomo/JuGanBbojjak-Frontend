@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import { EventDetailList } from "../../contance";
-import Header from "../header";
+import Header from "../../components/header";
 import EventScheduleList from "./eventScheduleList";
 import { useState } from "react";
 
