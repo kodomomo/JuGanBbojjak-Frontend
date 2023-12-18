@@ -28,6 +28,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   padding: 190px 440px;
+  min-width: 1400px;
 `;
 
 const LoginForm = styled.div`
