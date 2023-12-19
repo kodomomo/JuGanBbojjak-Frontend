@@ -1,7 +1,14 @@
 import { styled } from "styled-components";
-import { ListContent, ListText } from "../../../constants/main";
+import { ListText } from "../../../constants/main";
+import { getWeeklyList } from "../../../utils/apis/main";
+import { useNavigate } from "react-router";
 
 const WeeklyEvent = () => {
+  const { data } = getWeeklyList("EVENT_SCHEDULE");
+  const navigate = useNavigate();
+  const typeGenerator: Record<string, string> = {
+    EVENT_SCHEDULE: "주간 행사 일정",
+  };
   return (
     <Container>
       <ListType>
@@ -11,12 +18,18 @@ const WeeklyEvent = () => {
       </ListType>
       <hr />
       <Content>
-        {ListContent.map((item, index) => {
+        {data?.weeklyList.map((item, index) => {
           return (
-            <CellWrapper>
-              <Cell key={index}>{item.value}</Cell>
-              <Cell key={index}>{item.name}</Cell>
-              <Cell key={index}>{item.key}</Cell>
+            <CellWrapper
+              onClick={() => {
+                navigate(`/eventScheduleDetail/${index}`);
+              }}
+            >
+              <Cell key={index}>
+                {item.startDate} ~ {item.endDate}
+              </Cell>
+              <Cell key={index}>{typeGenerator[item.type]}</Cell>
+              <Cell key={index}>{typeGenerator[item.type]}</Cell>
             </CellWrapper>
           );
         })}
@@ -45,13 +58,14 @@ const ListType = styled.div`
 const Content = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   font: ${({ theme }) => theme.fonts.Medium16};
 `;
 
 const CellWrapper = styled.div`
   display: flex;
+  justify-content: space-around;
   margin-top: 20px;
+  cursor: pointer;
 `;
 
 const Cell = styled.span`

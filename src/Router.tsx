@@ -15,12 +15,15 @@ function Router() {
         <Route path="/main" element={<MainPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route
-          path="/eventScheduleDetail"
+          path="/eventScheduleDetail/:id"
           element={<EventScheduleDetailPage />}
         />
         <Route path="/workReport" element={<WorkReportPage />} />
         <Route path="/writeSchedule" element={<WritingEventSchedulePage />} />
-        <Route path="WeeklyWorkDetail" element={<WeeklyWorkDetailPage />} />
+        <Route
+          path="/WeeklyWorkDetail/:id"
+          element={<WeeklyWorkDetailPage />}
+        />
       </Routes>
     </BrowserRouter>
   );

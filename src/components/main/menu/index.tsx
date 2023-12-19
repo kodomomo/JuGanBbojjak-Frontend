@@ -10,25 +10,17 @@ const Menu = ({ selectMenu, setSelectMenu }: PropsType) => {
   return (
     <Container>
       <MenuBox
-        click={selectMenu === "최근"}
+        click={selectMenu === "WORK_REPORT"}
         onClick={() => {
-          setSelectMenu("최근");
-        }}
-      >
-        최근
-      </MenuBox>
-      <MenuBox
-        click={selectMenu === "주간업무보고"}
-        onClick={() => {
-          setSelectMenu("주간업무보고");
+          setSelectMenu("WORK_REPORT");
         }}
       >
         주간업무보고
       </MenuBox>
       <MenuBox
-        click={selectMenu === "주간행사일정"}
+        click={selectMenu === "EVENT_SCHEDULE"}
         onClick={() => {
-          setSelectMenu("주간행사일정");
+          setSelectMenu("EVENT_SCHEDULE");
         }}
       >
         주간행사일정
@@ -55,7 +47,7 @@ const MenuBox = styled.div<{ click?: boolean }>`
   cursor: pointer;
   color: ${({ theme, click }) => click && theme.colors.White};
   background-color: ${({ theme, click }) => click && theme.colors.Main};
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 2, 0.10);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 2, 0.1);
 `;
 
 export default Menu;
