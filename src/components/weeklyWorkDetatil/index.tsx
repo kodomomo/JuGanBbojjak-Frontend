@@ -1,15 +1,19 @@
 import { styled } from "styled-components";
 import List from "./List";
 import { useState } from "react";
+import { useParams } from "react-router";
 
 const WeeklyWorkDetail = () => {
+  const { params } = useParams();
   const [isEditMode, setIsEditMode] = useState(false);
 
   const handleModifyButtonClick = () => {
     setIsEditMode(!isEditMode);
   };
+  console.log(params);
   return (
     <Container>
+      {params}
       <a>주간 업무 보고</a>
       <Date>2023.11.3~2023.11.10</Date>
       <ModifyBtn onClick={handleModifyButtonClick}>

@@ -1,7 +1,14 @@
 import { styled } from "styled-components";
-import { ListContent, ListText } from "../../../constants/main";
+import { ListText } from "../../../constants/main";
+import { getWeeklyList } from "../../../utils/apis/main";
+import { useNavigate } from "react-router";
 
 const WeeklyWork = () => {
+  const { data } = getWeeklyList("WORK_REPORT");
+  const navigate = useNavigate();
+  const typeGenerator: Record<string, string> = {
+    WORK_REPORT: "주간 업무 보고",
+  };
   return (
     <Container>
       <ListType>
@@ -11,12 +18,18 @@ const WeeklyWork = () => {
       </ListType>
       <hr />
       <Content>
-        {ListContent.map((item, index) => {
+        {data?.weeklyList.map((item, index) => {
           return (
-            <CellWrapper>
-              <Cell key={index}>{item.value}</Cell>
-              <Cell key={index}>{item.name}</Cell>
-              <Cell key={index}>{item.key}</Cell>
+            <CellWrapper
+              onClick={() => {
+                navigate(`/WeeklyWorkDetail/${index}`);
+              }}
+            >
+              <Cell>
+                {item.startDate} ~ {item.endDate}
+              </Cell>
+              <Cell>{typeGenerator[item.type]}</Cell>
+              <Cell>{typeGenerator[item.type]}</Cell>
             </CellWrapper>
           );
         })}
@@ -51,7 +64,9 @@ const Content = styled.div`
 
 const CellWrapper = styled.div`
   display: flex;
+  justify-content: space-around;
   margin-top: 20px;
+  cursor: pointer;
 `;
 
 const Cell = styled.span`
