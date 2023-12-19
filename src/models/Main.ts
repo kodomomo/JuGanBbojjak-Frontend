@@ -12,3 +12,12 @@ export interface WeeklyList {
 export interface WeeklyListResponse {
   weeklyList: WeeklyList[];
 }
+
+export interface LatestWorkResponse {
+  workReportId: string;
+  workReportStartDate: string;
+  workReportEndDate: string;
+  eventScheduleId: string;
+  eventScheduleStartDate: string;
+  eventScheduleEndDate: string;
+}

@@ -1,17 +1,37 @@
 import { styled } from "styled-components";
 import { useNavigate } from "react-router";
+import { getLatestList } from "../../../utils/apis/main";
 
 const Write = () => {
+  const { data } = getLatestList();
   const navigate = useNavigate();
   return (
     <>
       <Container>
         <WriteBoxWrapper>
           <WriteBox>
-            <WriteBtn onClick={()=>{navigate("/workReport")}} >주간 업무 보고 작성하러 가기</WriteBtn>
+            <WriteBtn
+              onClick={() => {
+                navigate("/workReport");
+              }}
+            >
+              주간 업무 보고 작성하러 가기
+            </WriteBtn>
+            <span>
+              {data?.workReportStartDate} ~ {data?.workReportEndDate}
+            </span>
           </WriteBox>
           <WriteBox>
-            <WriteBtn  onClick={()=>{navigate("/writeSchedule")}}>주간 행사 일정 작성하러 가기</WriteBtn>
+            <WriteBtn
+              onClick={() => {
+                navigate("/writeSchedule");
+              }}
+            >
+              주간 행사 일정 작성하러 가기
+            </WriteBtn>
+            <span>
+              {data?.eventScheduleStartDate} ~ {data?.eventScheduleEndDate}
+            </span>
           </WriteBox>
         </WriteBoxWrapper>
       </Container>
@@ -33,6 +53,7 @@ const WriteBoxWrapper = styled.div`
 
 const WriteBox = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 280px;
@@ -41,6 +62,10 @@ const WriteBox = styled.div`
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
   font: ${({ theme }) => theme.fonts.Regular16};
   color: ${({ theme }) => theme.colors.White};
+  span {
+    margin-top: 15px;
+    color: ${({ theme }) => theme.colors.Black};
+  }
 `;
 
 const WriteBtn = styled.div`
