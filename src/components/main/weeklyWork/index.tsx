@@ -18,7 +18,7 @@ const WeeklyWork = () => {
       </ListType>
       <hr />
       <Content>
-        {data?.weeklyList.map((item, index) => {
+        {data?.weeklyList?.map((item, index) => {
           return (
             <CellWrapper
               onClick={() => {
@@ -29,7 +29,7 @@ const WeeklyWork = () => {
                 {item.startDate} ~ {item.endDate}
               </Cell>
               <Cell>{typeGenerator[item.type]}</Cell>
-              <Cell>{typeGenerator[item.type]}</Cell>
+              <Cell>{item.id}</Cell>
             </CellWrapper>
           );
         })}

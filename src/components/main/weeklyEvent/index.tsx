@@ -18,7 +18,7 @@ const WeeklyEvent = () => {
       </ListType>
       <hr />
       <Content>
-        {data?.weeklyList.map((item, index) => {
+        {data?.weeklyList?.map((item, index) => {
           return (
             <CellWrapper
               onClick={() => {
