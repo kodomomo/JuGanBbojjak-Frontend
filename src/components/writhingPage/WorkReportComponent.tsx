@@ -1,41 +1,103 @@
+import { useState } from "react";
+import { createPortal } from "react-dom";
 import styled from "styled-components";
 import DefaultInput from "../../common/input";
 
-const WorkReportComponent = () => {
+interface ArrayItems {
+  content: string;
+  detail: string;
+}
+
+const WorkReportComponent: React.FC = () => {
+  const [isModalOpened, setIsModalOpened] = useState(false);
+  const [contentAdd, setContentAdd] = useState<ArrayItems[]>([
+    { content: "", detail: "" },
+  ]);
+
+  const addContent = () => {
+    setContentAdd([...contentAdd, { content: "", detail: "" }]);
+  };
+
+  const removeContent = (index: number) => {
+    if (contentAdd.length > 1) {
+      const newArray = [...contentAdd];
+      newArray.splice(index, 1);
+      setContentAdd(newArray);
+    }
+  };
+
+  const contentChange = (
+    index: number,
+    field: "content" | "detail",
+    value: string
+  ) => {
+    const newArray = [...contentAdd];
+    newArray[index][field] = value;
+    setContentAdd(newArray);
+  };
+
   return (
     <Wrapper>
-      <DefaultInput width={71.5} placeholder="제목을 입력해주세요" text="제목" />
+      <DefaultInput width={68} placeholder="제목을 입력해주세요" text="제목" />
       <Div>
         <ContentText>내용입력</ContentText>
-        <AddTableButton>항목 추가</AddTableButton>
+        <ButtonWrapper>
+          <Button onClick={addContent}>항목 추가</Button>
+          <Button onClick={() => removeContent(contentAdd.length - 1)}>
+            항목 삭제
+          </Button>
+        </ButtonWrapper>
       </Div>
-      <ContentInput placeholder="항목을 입력해주세요" />
-      <DetailInput placeholder="상세내용을 입력해주세요" />
+      {contentAdd.map((item, index) => (
+        <div key={index}>
+          <ContentInput
+            value={item.content}
+            onChange={(e) => contentChange(index, "content", e.target.value)}
+            placeholder="항목을 입력해주세요"
+          />
+          <DetailInput
+            value={item.detail}
+            onChange={(e) => contentChange(index, "detail", e.target.value)}
+            placeholder="상세내용을 입력해주세요"
+          />
+          <ButtonWrapper>
+            <Button onClick={() => setIsModalOpened(true)}>
+              {}표 추가하기
+            </Button>
+          </ButtonWrapper>
+        </div>
+      ))}
     </Wrapper>
   );
 };
 
-const Div=styled.div`
-display: flex;
-`
-const AddTableButton=styled.button`
-color: #FFF;
-font-size: 16px;
-font-weight: 500;
-width: 130px;
-height: 40px;
-text-align: center;
-justify-content: center;
-align-items: center;
-border-radius: 8px;
-background:  #d2d2d2;
-margin-left: auto;
-&:hover {
+const Div = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const ButtonWrapper = styled.div`
+  display: flex;
+  gap: 20px;
+`;
+const Button = styled.button`
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  width: 130px;
+  height: 40px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background: #d2d2d2;
+  margin-left: auto;
+  &:hover {
     background: #1a9fff;
   }
   border: none;
-outline: none;
-`
+  outline: none;
+`;
 
 const DetailInput = styled.textarea`
   width: 100%;
@@ -51,6 +113,7 @@ const DetailInput = styled.textarea`
   line-height: 30px;
   padding: 1% 1%;
   outline: none;
+  resize: none;
 `;
 const Wrapper = styled.div`
   border-radius: 20px;
@@ -59,6 +122,8 @@ const Wrapper = styled.div`
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
   height: 791px;
   padding: 60px 80px;
+  overflow-y: scroll;
+  margin-top: 60px;
 `;
 
 const ContentInput = styled.input`

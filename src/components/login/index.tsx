@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router";
 import { styled } from "styled-components";
 import { LoginCloud, LoginImg } from "../../assets/logo";
 
 const Login = () => {
+  const navigate = useNavigate();
   return (
     <Container>
       <LoginForm>
@@ -9,10 +11,16 @@ const Login = () => {
           <Logo src={LoginImg} alt="" />
           <InputSection>
             <p>아이디</p>
-            <Input placeholder="아이디를 입력해주세요."/>
+            <Input placeholder="아이디를 입력해주세요." />
             <p>비밀번호</p>
             <Input placeholder="비밀번호를 입력해주세요." type="password" />
-            <Button>로그인</Button>
+            <Button
+              onClick={() => {
+                navigate("/main");
+              }}
+            >
+              로그인
+            </Button>
           </InputSection>
         </Content>
       </LoginForm>
@@ -84,6 +92,7 @@ const Button = styled.button`
   &:hover {
     background-color: ${({ theme }) => theme.colors.Main800};
   }
+  cursor: pointer;
 `;
 
 const BackgroundImg = styled.img`

@@ -29,7 +29,7 @@ const WeeklyEvent = () => {
                 {item.startDate} ~ {item.endDate}
               </Cell>
               <Cell key={index}>{typeGenerator[item.type]}</Cell>
-              <Cell key={index}>{typeGenerator[item.type]}</Cell>
+              <Cell key={index}>진행중</Cell>
             </CellWrapper>
           );
         })}

@@ -4,8 +4,7 @@ import WritingComponent from "./WritingComponent";
 import { useNavigate } from "react-router";
 
 const WritingEventSchedule = () => {
-
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   return (
     <>
@@ -15,8 +14,14 @@ const WritingEventSchedule = () => {
         <WritingComponent />
         <Button type="button">+</Button>
         <ButtonWrapper>
-          <Cancelbutton onClick={()=>{navigate("/main")}} >취소</Cancelbutton>
-          <Savebutton>저장</Savebutton>
+          <Cancelbutton
+            onClick={() => {
+              navigate("/main");
+            }}
+          >
+            취소
+          </Cancelbutton>
+          <Savebutton onClick={() => navigate("/main")}>저장</Savebutton>
         </ButtonWrapper>
       </Container>
     </>

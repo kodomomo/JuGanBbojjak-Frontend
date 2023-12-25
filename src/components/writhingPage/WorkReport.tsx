@@ -2,21 +2,39 @@ import styled from "styled-components";
 import WorkReportComponent from "./WorkReportComponent";
 import Header from "../header";
 import { useNavigate } from "react-router";
+import { useState } from "react";
 
 const WorkReport = () => {
+  const navigate = useNavigate();
+  const [workReports, setWorkReports] = useState<number[]>([0]);
 
-  const navigate=useNavigate();
+  const addWorkReport = () => {
+    setWorkReports((prevWorkReports) => [
+      ...prevWorkReports,
+      prevWorkReports.length,
+    ]);
+  };
 
   return (
     <>
       <Header />
       <Container>
         <MainText>주간 업무 보고 작성</MainText>
-        <WorkReportComponent/>
-        <Button type="button">+</Button>
+        {workReports.map((index) => (
+          <WorkReportComponent key={index} />
+        ))}
+        <Button type="button" onClick={addWorkReport}>
+          +
+        </Button>
         <ButtonWrapper>
-          <Cancelbutton onClick={()=>{navigate("/main")}} >취소</Cancelbutton>
-          <Savebutton>저장</Savebutton>
+          <Cancelbutton
+            onClick={() => {
+              navigate("/main");
+            }}
+          >
+            취소
+          </Cancelbutton>
+          <Savebutton onClick={() => navigate("/main")}>저장</Savebutton>
         </ButtonWrapper>
       </Container>
     </>
@@ -32,7 +50,7 @@ const MainText = styled.div`
   font-weight: 700;
   display: flex;
   justify-content: center;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 `;
 
 const Button = styled.button`
@@ -56,7 +74,7 @@ const Button = styled.button`
 
 const Cancelbutton = styled.button`
   border-radius: 8px;
-  background:  #d2d2d2;
+  background: #d2d2d2;
   display: flex;
   width: 80px;
   height: 40px;

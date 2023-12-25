@@ -10,7 +10,7 @@ const List = () => {
   return (
     <>
       <BoxWrapper>
-        <p>추석 명절 국가보훈대상자 위문 실시</p>
+        <p>유성구청 프로젝트 시연</p>
         <Content>
           <ul>
             {ListTitle.map((item, index) => {
@@ -21,7 +21,7 @@ const List = () => {
               );
             })}
           </ul>
-          <Table>
+          {/* <Table>
             <thead>
               <tr>
                 {ContentTableTop.map((item, index) => {
@@ -38,7 +38,7 @@ const List = () => {
                 );
               })}
             </tbody>
-          </Table>
+          </Table> */}
         </Content>
       </BoxWrapper>
     </>
@@ -68,7 +68,6 @@ const BoxWrapper = styled.div`
     font: ${({ theme }) => theme.fonts.Semibold20};
     margin-bottom: 50px;
   }
-  overflow: scroll;
 `;
 
 const Content = styled.div`

@@ -29,7 +29,7 @@ const WeeklyWork = () => {
                 {item.startDate} ~ {item.endDate}
               </Cell>
               <Cell>{typeGenerator[item.type]}</Cell>
-              <Cell>{item.id}</Cell>
+              <Cell>진행중</Cell>
             </CellWrapper>
           );
         })}

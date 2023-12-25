@@ -20,6 +20,7 @@ const DefaultInput = (props: props) => {
 const Container = styled.div`
   display: flex;
   margin-bottom: 50px;
+  align-items: center;
 `;
 
 const Text = styled.div`
@@ -35,14 +36,12 @@ const Input = styled.input<{ width: number }>`
   background: #fff;
   margin-left: 30px;
   height: 60px;
-    color: black;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 30px;
-    padding: 1% 1%;
-    outline: none;
-    
- 
+  color: black;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  padding: 1% 1%;
+  outline: none;
 `;
 
 export default DefaultInput;

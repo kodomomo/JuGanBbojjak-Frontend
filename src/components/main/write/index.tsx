@@ -18,7 +18,8 @@ const Write = () => {
               주간 업무 보고 작성하러 가기
             </WriteBtn>
             <span>
-              {data?.workReportStartDate} ~ {data?.workReportEndDate}
+              {/* {data?.workReportStartDate} {data?.workReportEndDate} */}
+              2023-12-19 ~ 2023-12-31
             </span>
           </WriteBox>
           <WriteBox>
@@ -30,7 +31,8 @@ const Write = () => {
               주간 행사 일정 작성하러 가기
             </WriteBtn>
             <span>
-              {data?.eventScheduleStartDate} ~ {data?.eventScheduleEndDate}
+              {/* {data?.eventScheduleStartDate} {data?.eventScheduleEndDate} */}
+              2023-12-19 ~ 2023-12-31
             </span>
           </WriteBox>
         </WriteBoxWrapper>
